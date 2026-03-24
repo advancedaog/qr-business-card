@@ -115,7 +115,7 @@ body {
 /* Center Logo Area */
 .center-logo-area {
     position: absolute;
-    top: 48%; /* Slightly above vertical center */
+    top: 50%; /* true center */
     left: 50%;
     transform: translate(-50%, -50%) translateZ(40px);
     display: flex;
@@ -125,9 +125,8 @@ body {
 }
 
 .main-logo {
-    width: 90%;
+    width: 100%;
     max-width: 250px;
-    max-height: 40px; /* Constrains height to completely avoid squishing text */
     height: auto;
     object-fit: contain;
     /* Adding a tiny drop shadow to give it that printed pop */
@@ -146,7 +145,7 @@ body {
 /* Bottom Contact Info */
 .bottom-contact-info {
     position: absolute;
-    bottom: 12%;
+    bottom: 6%; /* Push way down to avoid center overlap */
     width: 100%;
     text-align: center;
     transform: translateZ(30px);
