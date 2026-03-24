@@ -11,6 +11,7 @@ body {
     background: linear-gradient(135deg, #112230, #1b3a4b, #2c5364);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -124,8 +125,9 @@ body {
 }
 
 .main-logo {
-    width: 100%;
+    width: 90%;
     max-width: 250px;
+    max-height: 40px; /* Constrains height to completely avoid squishing text */
     height: auto;
     object-fit: contain;
     /* Adding a tiny drop shadow to give it that printed pop */
@@ -166,6 +168,36 @@ body {
 .contact-email {
     margin-top: 8px;
 }
+
+/* Make links clickable but keep colors */
+a.link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    z-index: 20; /* Ensure it lies above the card's 3D layers */
+}
+
+/* Explicit Button Below Card */
+.visit-btn {
+    margin-top: 50px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #4aecb7, #37b794);
+    color: #112230;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+    letter-spacing: 0.05em;
+    z-index: 20;
+}
+
+.visit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
 
 /* Tap Hint */
 .tap-hint {

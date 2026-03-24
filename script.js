@@ -32,8 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
         cardContainer.style.transform = 'rotateX(0) rotateY(0)';
     });
 
-    // Handle the tap / click action
-    cardContainer.addEventListener('click', () => {
+    // Prevent flip when clicking phone/email links explicitly
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
+    // Handle the tap / click action on the card
+    cardContainer.addEventListener('click', (e) => {
         if (isFlipped) return; // Prevent double trigger
         
         isFlipped = true;
@@ -48,5 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             window.location.href = "https://advancedaog.com"; // Company Website Redirect
         }, 800); 
+    });
+
+    // Reset state when coming back from browser history (e.g back button)
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted || isFlipped) {
+            isFlipped = false;
+            cardContainer.classList.remove('is-flipped');
+        }
     });
 });
