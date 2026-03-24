@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AOG & Avionics - Josh Millard</title>
+    <!-- Use a serif font for main text if it matches better, but the card seems to use a clean sans-serif/serif hybrid. Let's use clean Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="card" id="business-card">
+            <!-- Front of the Card -->
+            <div class="card-face card-front">
+                <div class="watermark-logo"></div>
+                <div class="card-content">
+                    
+                    <div class="top-left-header">
+                        <div class="name">Destan Karagozler</div>
+                        <div class="title">AOG Technician</div>
+                    </div>
+                    
+                    <div class="center-logo-area">
+                        <img src="assets/logo.png" alt="Advanced AOG Logo" class="main-logo">
+                    </div>
+                    
+                    <div class="bottom-contact-info">
+                        <div class="contact-row">
+                            <span class="label">Office:</span> 
+                            <span class="value">855.AOG.2424</span>
+                        </div>
+                        <div class="contact-row">
+                            <span class="label">Cell:</span> 
+                            <span class="value">386.679.6966</span>
+                        </div>
+                        <div class="contact-email">
+                            Destan.Karagozler@AdvancedAOG.com
+                        </div>
+                    </div>
+                    
+                    <div class="tap-hint">
+                        <span class="pulse-dot"></span> Tap anywhere to visit our website
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back of the Card (Revealed on Tap) -->
+            <div class="card-face card-back">
+                <div class="redirect-content">
+                    <div class="spinner"></div>
+                    <p>Taking you to the website...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Tilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
