@@ -1,5 +1,46 @@
+// Technician Database
+const technicians = {
+    destan: {
+        name: "Destan Karagozler",
+        title: "AOG Technician",
+        cellDisplay: "386.679.6966",
+        cellLink: "3866796966",
+        email: "Destan.Karagozler@AdvancedAOG.com"
+    },
+    kohen: {
+        name: "Kohen Landry",
+        title: "Senior Field Service Engineer",
+        cellDisplay: "318.884.5112",
+        cellLink: "3188845112",
+        email: "kohen.landry@advancedaog.com"
+    },
+    derin: {
+        name: "Derin Karagozler",
+        title: "AOG Technician",
+        cellDisplay: "386.500.2401",
+        cellLink: "3865002401",
+        email: "derin.karagozler@advancedaog.com"
+    }
+};
+
 // Add 3D effect logic dynamically and handle tap logic
 document.addEventListener("DOMContentLoaded", () => {
+    // ---- Dynamic Content Loading ----
+    const urlParams = new URLSearchParams(window.location.search);
+    const techId = urlParams.get('id') ? urlParams.get('id').toLowerCase() : 'destan';
+    const techData = technicians[techId] || technicians['destan'];
+
+    document.getElementById('card-name').textContent = techData.name;
+    document.getElementById('card-title').textContent = techData.title;
+    
+    const cellEl = document.getElementById('card-cell');
+    cellEl.textContent = techData.cellDisplay;
+    cellEl.href = "tel:" + techData.cellLink;
+
+    const emailEl = document.getElementById('card-email');
+    emailEl.textContent = techData.email;
+    emailEl.href = "mailto:" + techData.email;
+    // ---------------------------------
     const cardContainer = document.querySelector('.card');
     let isFlipped = false;
 
